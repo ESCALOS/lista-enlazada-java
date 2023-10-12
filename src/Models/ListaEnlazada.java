@@ -108,14 +108,13 @@ public class ListaEnlazada {
     public void eliminarPrimero() {
         if (cabeza != null) {
             cabeza = cabeza.getSiguiente();
+            cantidadNodos--;
         }
-        cantidadNodos--;
     }
 
     public void eliminarUltimo(){
         if (cabeza != null) {
             if (cabeza.getSiguiente() == null) {
-                // Caso especial: la lista tiene un solo elemento
                 cabeza = null;
             } else {
                 Nodo actual = cabeza;
@@ -124,8 +123,8 @@ public class ListaEnlazada {
                 }
                 actual.setSiguiente(null);
             }
+            cantidadNodos--;
         }
-        cantidadNodos--;
     }
 
     public void eliminarPorIndice(int indice) {
@@ -145,8 +144,8 @@ public class ListaEnlazada {
                     actual.setSiguiente(actual.getSiguiente().getSiguiente());
                 }
             }
+            cantidadNodos--;
         }
-        cantidadNodos--;
     }
 
     public void mostrar() {
